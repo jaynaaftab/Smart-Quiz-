@@ -37,10 +37,10 @@ def answer_check(index, user_answer):
         print("Your answer is incorrect! The answer was:", answer)
    
 
+print('Emerging Technologies Quiz') 
 
 
-
-correct_answers = ["False", "A", "C", "D", "False", "A", "False", "False", "B", "A"]
+correct_answers = ["False", "A", "C", "D", "False", "A" "False", "False", "C", "B", "A"]
 user_correct = []
 questions = ["1. True or False: All IoT devices require the Internet to perform their task of communication to another source. \n",
              "2. Multiple Choice: Which of the following is NOT a characteristic of wireless IoT connectivity? \n A: Wireless connectivity is much more expensive than wired connectivity due to the modern nature of it \n B: Wireless IoT connections are, on a physical level, much easier to set up than a wired connection \n C:  Wireless connections are slower in speed of connection than wired connections \n D: The speed of wireless connections can be impacted by physical objects such as walls or floors\n",
@@ -64,18 +64,21 @@ index = 0
 
 for question in questions:
     if ('Multiple Choice') in question:
+        time.sleep(1)
         question = input(question).upper()
         question = multiple_choice_check(question)
         answer_check(index, question)
         index += 1
    
     elif ('True or False') in question:
+        time.sleep(1)
         question = input(question).capitalize()
         question = bool_check(question)
         answer_check(index, question)
         index += 1
    
     elif ('number') in question:
+        time.sleep(1)
         question = input(question)
         question = int_validation(question)
         answer_check(index, question)
@@ -86,4 +89,3 @@ for question in questions:
 
 score = sum(user_correct)
 print("Your final score is:", score, "/ 11")
-
